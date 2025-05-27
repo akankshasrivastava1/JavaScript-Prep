@@ -1,0 +1,1 @@
+alert("Hi From External Js")

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        showWelcomeMsg();
+        var num1 = 12;
+        var num2 = 12;
+
+       function showWelcomeMsg() 
+       {
+        alert("Welcome b-30")
+       }
+
+       function getSum()
+       {
+        var result = num1 + num2;
+        alert("Add"+ result)
+       }
+
+       getSum();
+       
+       function getAdditionOfTwoNum(num1=0, num2=0)
+       {
+        debugger;
+    
+        var result = num1 + num2;
+        alert('Result'+result)
+       }
+
+       getAdditionOfTwoNum(3,5)
+       getAdditionOfTwoNum(44,66)
+       getAdditionOfTwoNum(55);
+
+
+       function getAddition(num1, num2)
+       {
+        const result = num1+num2;
+        return result; 
+       }
+
+       var result1 = getAddition(5,7)
+       console.log(result1)
+
+       console.log(getAddition(3,4))
+       
+    </script>
+
+    //var arr = [1,2,[5,6]]
+    //var arrr = [1,2,3,4,5,6,7]
+</body>
+</html>
