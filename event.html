@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function showAlert(){
+            alert("Hello")
+        }
+
+        function showMessage(showMessage){
+            alert("message")
+        }
+
+        function onCityChange(){
+            alert('City Changed')
+        }
+
+        function onTextChange(){
+            alert("on text Changes")
+        }
+
+        function onMouseIn(){
+            console.log("Mouse ENtered")
+        }
+
+        function onMouseLeft(){
+            console.log
+        }
+
+        function onPageResize(){
+            console.log("function width chnage")
+        }
+
+        function pageScroll(){
+            console.log("on page Scrollinng")
+        }
+    </script>
+    <div class="row pt-3">
+        <div class="col-3">
+            <button onclick="showMessage('Angular')" class="btn btn-sucess">Angular</button>
+        </div>
+        <div class="col-3">
+            <button onclick="showMessage('React js')" class="btn btn-primary">React js</button>
+        </div>
+        <div class="col-3">
+            <button class="btn btn-warning" onclick="showMessage('java')">Java</button>
+        </div>
+        <div class="col-3">
+            <button class="btn btn-warning" onclick="showMessage()"></button>
+        </div>
+    </div>
+
+    <div class="row pt-4">
+        <div class="col-3">
+            <select class="form-select" onchange="onCityChange()">
+                <option>Pune</option>
+                <option>Nagpur</option>
+                <option>Jaipur</option>
+            </select>
+        </div>
+        <div class="col-3">
+            <input type="text" oninput="onTextChange()" name="" id="">
+        </div>
+         <div class="col-3">
+            <input type="checkbox" onchange="onTextChange()" name="" id="">
+        </div>
+
+        <div class="row">
+            <div onmouseenter="onMouseIn()" onmouse class="col-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <button class="btn btn-danger">Show Course Name</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('scroll',onpagescroll())
+        function onpagescroll(){
+            console.log("Mouse is Moving")
+        }
+        function showCourseName(){
+            alert("Angular + Dotnet")
+        }
+    </script>
+</body>
+</html>
