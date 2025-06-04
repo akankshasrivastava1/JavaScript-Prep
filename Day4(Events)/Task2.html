@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--(onblur Event or onchange)
+Take three textboxes.
+Do multiplication of textbox 1 and 2 and store the result in textbox 3.-->
+    <h3>Multiply Two Numbers</h3>
+    <input type="number" id="num1" onblur="calculateProduct()" placeholder="Enter number 1" />
+    <input type="number" id="num2" onblur="calculateProduct()" placeholder="Enter number 2" />
+    <input type="text" id="result" readonly placeholder="Result" />
+
+    <script>
+       function multiply() {
+            var a = document.getElementById("num1").value;
+            var b = document.getElementById("num2").value;
+
+            var result = a * b;
+            document.getElementById("result").value = result;
+        }
+    </script>
+</body>
+</html>

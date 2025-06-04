@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Create a function which has a parameter where we can send a word as parameter.
+And converts the first letter of word into upper case and Return New String.-->
+    <script>
+        function myfunction(word){
+            return word.charAt(0).toUpperCase() + word.slice(1);
+        }
+        var result = myfunction("alka");
+        console.log(result);
+    </script>
+</body>
+</html>

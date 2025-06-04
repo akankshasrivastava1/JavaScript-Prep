@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function readValue(){
+            debugger;
+            const name = document.getElementById("txtName").value;
+            alert(name);
+            document.getElementById("txtCopyName").value = name;
+        }
+        function onSelectCity(){
+            const cityName = document.getElementById("selectCity").value;
+            document.getElementById("txtSelectedCity").value=cityName
+        }
+        function readPText(){
+            const pText = document.getElementById("pText").innerText;
+            alert(pText)
+        }
+        function readDivText(){
+            const divText= document.getElementById("myDiv").innerText;
+            alert(divText)
+        }
+        function readDivHtml(){
+            const divHtml = document.getElementById("myDiv").innerHTML;
+            alert(divHtml)
+        }
+        function changeText(){
+            const elementList = document.getElementsByClassName('myDiv')
+            
+            for(let index=0; index<elementList.length; index++){
+                elementList[0].innerText="Test"
+            }
+            elementList.forEach(element =>{
+                element.innerText ="Test"
+            })
+        }
+    </script>
+    <div class="row">
+        <div class="col-3">
+            <div class="myDiv">
+                div1
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="myDiv">
+                div2
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="myDiv">
+                div2
+            </div>
+        </div>
+         <div class="col3">
+        <button onclick="readpText()" class="btn btn-sucess"></button>
+    </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-3">
+            <p id="pText">This is simple text</p>
+        </div>
+        <div class="col3">
+        <button onclick="readpText()" class="btn btn-sucess"></button>
+    </div>
+    </div>
+        <div class="row">
+        <div class="col-3">
+            <div id="myDiv">
+                <label>This is lable</label>
+                <p >This is simple text</p>
+                <span>This is span</span>
+            </div>
+        
+        </div>
+        <div class="col3">
+        <button onclick="readDivText()" class="btn btn-sucess"></button>
+    </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <select  id="selectCity" onchange="onSelectCity()">
+                <option>Pune</option>
+                <option>Mumbai</option>
+                <option>Noida</option>
+            </select>
+        </div>
+        <div class="col-3">
+            <input type="text" id="txtSelectedcity" placeholder="City"/>
+        </div>
+        <div class="col-3">
+            <input type="text" id="txtName" placeholder="Name"/>
+        </div>
+    </div>
+    <div class="col3">
+        <button onclick="readValue()" class="btn btn-sucess"></button>
+    </div>
+    <div class="col-3">
+            <input type="texct" id="txtCopyName" placeholder="coppied name"/>
+        </div>
+</body>
+</html>
