@@ -14,6 +14,18 @@
 </head>
 <body class="bg-light">
     <script>
+        //local session storage data will be there if we closed the tab and browser 
+        localStorage.setItem('courseName', 'Angular')
+        
+        const localData = localStorage.getItem('courseName')
+// once the page closed data lost
+        sessionStorage.setItem("courseDuration", "3 Months")
+        sessionStorage
+
+       // localStorage.removeItem('courseName')
+
+       // localStorage.clear();
+
         var todoItems = [];
 
         function addItem(event){
@@ -24,9 +36,16 @@
             
             if (itemName === "") return; // Do not add empty tasks
             todoItems.unshift(itemName);
-
+            
             document.getElementById("taskInput").value="";
+            printTask()
+            
+        }
+
+        function printTask(){
+            
             document.getElementById("taskList").innerHTML="";
+            
 //template literal
             for(let index=0; index < todoItems.length; index++){
                 const taskLi = `
@@ -37,21 +56,45 @@
           </div>
         </div>
         <div>
-          <button class="btn btn-sm btn-outline-info me-1" onclick="onEdit('${todoItems[index]}')">Edit</button>
-          <button class="btn btn-sm btn-outline-danger">Delete</button>
+          <button class="btn btn-sm btn-outline-info me-2" onclick="onEdit('${todoItems[index]}')">Edit</button>
+          <button class="btn btn-sm btn-outline-danger"  onclick="onDelete('${todoItems[index]}')">Delete</button>
         </div>
       </li>     
             `
             document.getElementById("taskList").insertAdjacentHTML("beforeEnd",taskLi)
-            };
+            };        
+        }
 
-            function onEdit(itemName){
+        var currentItem ="";
+
+        function onDelete(item){
+            for(let index=0; index<todoItems.length; index++){
+                if(item==todoItems[index]){
+                    todoItems.splice(index,1)
+                }
+            }
+            printTask()
+        }
+
+        function onEdit(itemName){
                 debugger;
+
+                currentItem = itemName;
                 document.getElementById("taskInput").value= itemName;
+
+                document.getElementById("btnAdd").style.display="none";
+                document.getElementById("btnUpdate").style.display="block";
             }
 
-            
-        }
+            function onUpdate(){
+                for(let index = 0; index<todoItems.length; index++){
+                    if(currentItem == todoItems[index]){
+                        todoItems[index]= document.getElementById("taskInput").value;
+                    }
+                }
+                document.getElementById("taskInput").value="";
+                printTask()
+            }
     </script>
 
   <div class="container py-5">
@@ -63,7 +106,8 @@
         <form id="taskForm">
           <div class="input-group">
             <input type="text" class="form-control" id="taskInput" placeholder="Enter new task">
-            <button class="btn btn-primary" onclick="addItem(event)" type="submit">Add Task</button>
+            <button class="btn btn-primary" onclick="addItem(event)" id="btnAdd" type="button">Add Task</button>
+             <button class="btn btn-warning" onclick="onUpdate(event)" id="btnUpdate" style="display:none;" type="button">Update Task</button>
           </div>
         </form>
       </div>
