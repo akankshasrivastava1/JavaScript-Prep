@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+    <div class="row">
+        <div class="col-3">
+            <input type="text" id="textState" placeholder="State Name" />
+        </div>
+        <div class="col-3">
+            <input type="button" onclick="addState()" value="Add State" />
+        </div>
+        <div class="col-5">
+            <ul id="myStateList">
+
+            </ul>
+        </div>
+    </div>
+    <script>
+
+    //   function addState() {
+    //       debugger;
+    //       const stateName = document.getElementById("textState").value;
+    //       stateList.push(stateName)
+    //       document.getElementById("myStateList").innerHTML = "";
+    //       printArray()
+    //       
+    //   }
+
+    //   function printArray() {
+    //       for (let index = 0; index < stateList.length; index++) { 
+    //           const myStateLi = document.createElement("li");
+    //           myStateLi.innerText = stateList[index];
+    //           document.getElementById("myStateList").append(myStateLi)
+    //       }
+    //   }
+    //   var stateList = ["Maha", "MP", "AP", "Goa", "Beg"];
+
+    //   printArray()
+
+    //   var name= "Chetan";
+    //   var fullName = "Chetan P Jogi"
+    //   var mySeneten = "I am , from Nagpur, with State Mah, with Education BE"
+    //   var charArray =  name.split("");
+    //   var wordArray = fullName.split(" ")
+    //   var newArra  =  mySeneten.split(",")
+    //   debugger;
+
+    //   var cityList = ["Pune", "Mumbai", "Thane"];
+
+    //   var rollNoList = [111, 112, 113, 114, 115, 116];
+
+    //   console.log(cityList[1]);
+
+    //   console.log(rollNoList[4]);
+
+    //   console.log(cityList[7])
+    //   console.log(cityList)
+    //   cityList[1] = "Nagpur";
+    //   console.log(cityList);
+
+    //   const cityTotal = cityList.length;
+
+    //   console.log(cityTotal)
+    //   console.log('before push ' + cityList);
+    //   cityList.push("Jaipur");
+    //   cityList.push("bhopal");
+    //   debugger;
+    //   console.log('after push ' + cityList);
+    //   cityList.pop()
+    //   cityList.pop()
+    //   cityList.pop()
+
+    //   cityList.unshift("Noida");
+    //   cityList.unshift("Panji");
+    //   cityList.unshift("chandrpur");
+    //   console.log('after unshift ' + cityList);
+    //   cityList.shift()
+
+    //   var studentList = ["Chetan", "Ram", "shyam", "Anket", "Aman"];
+    //   console.log(studentList);
+    //   studentList.splice(1, 1)
+    //   console.log(studentList);
+
+    var rollNoList =[11,12,13,14,15,16,17,25,27,26,28,13];
+
+    var studentList =[
+        {isActive:true, id:123, name:'aa', city:'pune'},
+        {isActive:false, id:124, name:'aag', city:'mumbai'},
+        {isActive:true, id:125, name:'aagr', city:'thane'},
+        {isActive:false, id:123, name:'aab', city:'airoli'},
+        {isActive:true, id:127, name:'aaef', city:'dadar'},
+        {isActive:false, id:128, name:'aa', city:'pune'},
+    ];
+
+    const stud = studentList.find(stud => stud.id==123);
+    const stud2 = studentList.filter(stud => stud.id==123);
+
+    const puneStud = studentList.filter(m =>m.city == 'Pune')
+
+     const puneStud2 = studentList.filter(m =>m.city == 'Pune' && m.isActive == true)
+
+    const noPresent = rollNoList.find(num => num == 16)
+
+    const noPresent2 = rollNoList.find(num => num == 32)
+
+    const noPresent3 = rollNoList.find(num => num == 13)
+    debugger;
+ 
+    //filter will get array(multiple) of element
+    //find will get only one element
+    const noPresent4 = rollNoList.filter(num => num == 16)
+
+    const greaterThan14nlessthan23 = rollNoList.filter(m => m > 14 && m < 23)
+
+    const onPresnet5 = rollNoList.filter(num => num == 56)
+    </script>
+
+
+</body>
+
+</html>
